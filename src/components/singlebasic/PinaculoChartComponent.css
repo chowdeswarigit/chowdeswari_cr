@@ -1,0 +1,260 @@
+/* Keep all your existing CSS rules for desktop view (outside media queries) exactly as they were */
+
+/* Pinaculo Chart and Numerological Cycles Container - DESKTOP */
+.pinaculo-container {
+  margin-bottom: 2rem;
+  display: flex;
+  /* justify-content: center; */
+  padding-right: 180px; /* Space for absolute positioned table - KEEP FOR DESKTOP */
+  box-sizing: border-box;
+  position: relative; /* Add position relative to contain absolute child */
+  width: 50%;
+}
+
+.dotted-vertical-line {
+  border-left: 2px dotted rgb(145, 145, 21);
+}
+.pinaculo-chart-container{
+  display: flex;
+  width: 100%;
+}
+
+.pinaculo-image-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.pinaculo-chart {
+  position: relative; /* Context for absolute positioning - KEEP FOR DESKTOP */
+  width: 100%;
+  max-width: 530px;
+  display: flex; /* Optional: Helps center SVG if needed */
+  justify-content: center; /* Optional: Helps center SVG if needed */
+  max-height: 400px; /* updated here */
+  width: 350px; /* updated here */
+}
+
+.pinaculo-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 530px;
+}
+
+.cycles-table {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.cycles-header, .cycle-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.cycles-header {
+  font-weight: bold;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ccc;
+}
+
+.cycles-header span,
+.cycle-row span {
+  flex: 1;
+  text-align: center;
+  padding: 0px;
+}
+
+.cycles-header span:not(:last-child),
+.cycle-row span:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.cycle-row:last-child {
+  border-bottom: none;
+}
+
+/* Mobile adjustments if needed — example */
+.birth-container {
+  /* background-color: #4f2768; Purple background */
+  color: #f0e8e8;            /* Light font color */
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Morgan'
+}
+
+.birth-container h2.name {
+  font-size: 42px;
+  color: #E7E7D6; /* Light font color */
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  font-family: 'Morgan';
+  margin: 0;
+}
+
+.birth-container .birthdate {
+  font-size: 34.6px;
+  color: #E7E7D6;
+  margin: 0.1rem 0;
+  letter-spacing: 0.2rem;
+  margin-top: 10px;
+}
+
+.birth-container .labels {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 16px;
+  opacity: 0.6;
+  color: #E7E7D6; /* Light font color */
+  letter-spacing: 0.3rem;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .cycles-header, .cycle-row {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+}
+
+/* Numerological Cycles Table - DESKTOP */
+.numerological-cycles {
+  position: absolute; /* Absolute positioning - KEEP FOR DESKTOP */
+  left: 350px;
+  top: 55%; /* Or top: 80% if you preferred that vertical alignment */ /* updated here */
+  transform: translateY(-50%);
+  width: 170px; /* Or 180px */ /* updated here */
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  /* Add back border/shadow if desired for desktop */
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.numerological-cycles h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1rem; /* Or 18px */
+  font-weight: bold;
+  color: #333;
+}
+
+.cycles-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.cycle-row {
+  padding: 5px 8px; /* Or 6px 10px */
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem; /* Or 16px */
+  text-align: center;
+  color: #555;
+}
+
+.cycle-row:last-child {
+  border-bottom: none;
+}
+
+
+/* ============================================================ */
+/* Responsive adjustments - ONLY MODIFY WITHIN THESE BLOCKS */
+/* ============================================================ */
+
+@media (max-width: 768px) {
+  .pinaculo-container {
+    /* Completely restructure for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto 2rem;
+    width: 100%;
+    position: static;
+  }
+
+  .pinaculo-chart {
+    position: static;
+    width: 100%;
+    max-width: 400px; /* Reduce chart size on mobile */
+    margin: 0 auto 40px; /* Important: Add bottom margin */
+    display: block;
+    padding: 0;
+  }
+
+  .pinaculo-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .numerological-cycles {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+
+  /* Adjust text sizes for better fit if needed */
+  .numerological-cycles h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .cycle-row {
+    font-size: 1.1rem;
+    padding: 10px; 
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fine-tune for very small screens */
+  .pinaculo-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .pinaculo-chart {
+    max-width: 320px; /* Further reduce chart size */
+    margin-bottom: 30px; /* Maintain clear separation */
+  }
+
+  .pinaculo-chart svg {
+    max-width: 320px;
+  }
+
+  .numerological-cycles {
+    max-width: 225px;
+    padding: 15px;
+    width: 90%;
+  }
+
+  .numerological-cycles h3 {
+    font-size: 1.1rem;
+  }
+
+  .cycle-row {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+/* --- Include the rest of your original CSS file here --- */
+/* --- Ensure no other rules conflict, especially position properties --- */

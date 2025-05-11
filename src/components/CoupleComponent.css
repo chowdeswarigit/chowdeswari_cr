@@ -1,0 +1,1396 @@
+
+
+/* --- Parent Container Adjustments --- */
+
+.couple-content {
+  /* max-width: 1200px; */ /* REMOVED this line */
+  width: 100%;          /* Ensure it spans the full viewport width */
+  margin: 0;            /* Remove auto margins */
+  padding: 0px;        /* Keep padding for inner spacing */
+  box-sizing: border-box; /* Include padding in the 100% width */
+  position: relative;
+}
+
+/* Apply similar changes if .results-container is also a parent */
+.results-container {
+  /* background-color: white;  updated here*/
+  border-radius: 12px; /* Consider removing border-radius if it looks odd at full width */
+  /* border: 1px solid #e0e0e0; updated here */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */ /* Consider removing shadow */
+  /* max-width: 1200px; */ /* REMOVED this line */
+  width: 100%;           /* Ensure it spans the full width of its parent */
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed, maybe only top/bottom */
+  margin: 0 auto 10px;
+  box-sizing: border-box;
+}
+
+/* Add to your CoupleComponent.css or a relevant stylesheet */
+
+.couple-year-charts-section {
+  /* Add padding/margin as needed */
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #eee; /* Optional separator */
+}
+
+.couple-section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.couple-year-charts-container {
+  /* Container styles if needed */
+}
+
+.couple-year-charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* Adjust gap between person charts */
+}
+
+.couple-person-year-charts {
+  flex: 1; /* Each person's chart area takes up equal space */
+  min-width: 280px; /* Minimum width before wrapping */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center title and swiper */
+  padding: 10px;
+  box-sizing: border-box;
+  /* Add border or background if desired */
+  /* border: 1px solid #ddd; */
+}
+
+.couple-chart-title {
+  margin-bottom: 15px;
+  font-size: 1.1rem; /* Adjust */
+  font-weight: bold;
+}
+
+.person-year-swiper {
+  width: 100%; /* Make swiper take full width of its container */
+  max-width: 400px; /* Optional: constrain max width of the chart slider */
+  /* height: 350px; */ /* Optional: Set a fixed height */
+  --swiper-navigation-color: #007aff; /* Example arrow color */
+  --swiper-pagination-color: #007aff; /* Example dot color */
+  --swiper-navigation-size: 30px; /* Example arrow size */
+  padding-bottom: 30px; /* Space for pagination dots if enabled */
+}
+
+.year-chart-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.no-data-placeholder {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    min-height: 100px; /* Ensure it takes some space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the YearChartComponent itself fits well */
+.year-chart-slide > div { /* Assuming YearChartComponent's root is a div */
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Chart Section Adjustments --- */
+
+.couple-charts-desktop {
+  width: 100%;
+  /* Add horizontal padding if you don't want charts touching screen edges */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.couple-chart-row {
+  display: flex;
+  /* Decide how to distribute columns in the full width */
+  /* justify-content: space-around; */ /* Puts space around items */
+  justify-content: space-evenly; /* Distributes space evenly */
+  /* justify-content: space-between; */ /* Puts space between items */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.couple-chart-column {
+  /* Make columns flexible instead of fixed width */
+  flex: 1; /* Each column will take up equal space */
+  min-width: 280px; /* Prevent columns from becoming too narrow */
+   /* Optional: Set a max-width if they can become too wide on very large screens */
+  /* max-width: 500px; */
+  text-align: center;
+  /* padding: 0 10px; /* Add horizontal padding between columns */
+  box-sizing: border-box;
+  margin-bottom: 25px; /* Spacing for wrapped items */
+}
+
+/* --- Responsive Adjustments --- */
+/* You might want different behavior on smaller screens */
+@media (max-width: 992px) {
+   /* Example: 2 columns per row */
+   .couple-chart-column {
+     flex: 1 1 45%; /* Grow/shrink basis 45% */
+     max-width: 48%; /* Limit max width */
+   }
+}
+
+@media (max-width: 768px) {
+  /* Stack columns */
+  .couple-chart-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .couple-chart-column {
+    flex: 1 1 100%; /* Take full width when stacked */
+    width: 90%;    /* Limit width slightly */
+    max-width: 500px; /* Optional max width */
+    min-width: unset; /* Remove min-width */
+    margin-bottom: 30px;
+  }
+   .couple-chart-column:last-child {
+      margin-bottom: 0;
+  }
+}
+
+/* --- Optional: Remove padding from body/html if necessary --- */
+/* Sometimes default browser styles add padding */
+/*
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+/* }
+*/
+.couple-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+/* Container styling to match Angular app */
+.couple-container {
+  width: 100%;
+  padding: 30px;
+  margin: 0 auto 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  position: relative;
+}
+
+.couple-resultado2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.couple-titulo {
+  font-size: 35px;
+  margin-bottom: 1rem;
+  font-family: 'Morgan';
+  font-weight: 400;
+  text-align: center;
+  color: #E7E7D6;
+}
+.icon-style {
+  font-size: 2.6rem;
+  position: absolute;
+  margin-left: -2rem;
+  margin-top: -7px;
+  color:#E7E7D6
+}
+
+.couple-titulom {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.couple-person-title {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #5b356c;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.couple-person-title .couple-number {
+  font-size: 2.2rem;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.couple-person-title i {
+  margin-right: 5px;
+  color: #5b356c;
+  font-size: 1.8rem;
+}
+
+.couple-nombres {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  height: 38px;
+}
+
+/* Labels styling */
+.couple-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.couple-telefono {
+  display: none;
+}
+
+.couple-website {
+  font-size: 12px;
+  text-align: right;
+  color: #666;
+  color: #E7E7D6;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.couple-lleft {
+  width: 5rem;
+  float: left;
+  display: flex;
+  margin-top: 10px;
+}
+
+.couple-lright {
+  width: 5rem;
+  float: right;
+  display: flex;
+  margin-top: 10px;
+}
+
+.couple-logo {
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Button styling */
+.couple-btn.couple-btn-primary.couple-btn-lg.couple-btn-block.couple-send {
+  width: 100%;
+  padding: 0;
+  margin-top: 0rem;
+  background-color: #5B356C;
+  height: 38px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  border: 1px solid #E7E7D6;
+  margin: auto;
+}
+
+.couple-btn.couple-btn-primary.couple-btn-lg.couple-btn-block.couple-send:hover {
+  background-color: #6e01a0;
+  color: white;
+}
+
+/* Bootstrap grid classes for proper layout */
+.couple-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+}
+
+.couple-col-1, .couple-col-2, .couple-col-3, .couple-col-6, .couple-col-8, .couple-col-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+.couple-col-1 {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+.couple-col-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+  display: none; /* changed here */
+}
+
+.couple-col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.couple-col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.couple-col-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+  color: yellow;
+}
+
+.couple-col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Loading spinner matching Angular version */
+.couple-lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.couple-lds-ripple div {
+  position: absolute;
+  border: 4px solid #594363;
+  opacity: 1;
+  border-radius: 50%;
+  animation: couple-lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.couple-lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes couple-lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/* Person icon styling */
+.couple-masc {
+  position: relative;
+  display: inline-block;
+}
+
+.couple-iconin {
+  font-size: 2rem;
+  color: #5b356c;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .couple-content {
+    margin-top: 1.5rem;
+    padding: 0 15px;
+  }
+  
+  .couple-container {
+    padding: 0px;
+  }
+  
+  .couple-titulo {
+    font-size: 1.2rem;
+  }
+  
+  .couple-logo {
+    height: 60px;
+  }
+  
+  .couple-lleft, .couple-lright {
+    width: 3.5rem;
+  }
+  
+  .couple-masc {
+    transform: scale(0.8);
+  }
+}
+
+/* Numerology diagram styling */
+.couple-numerology-diagram {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.couple-number-node {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #594363;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #594363;
+}
+
+.couple-number-node.couple-top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.couple-number-node.couple-left {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.couple-number-node.couple-right {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.couple-number-node.couple-bottom-left {
+  bottom: 20%;
+  left: 20%;
+}
+
+.couple-number-node.couple-bottom-right {
+  bottom: 20%;
+  right: 20%;
+}
+
+/* Swiper styling */
+.couple-swiper-container-mobil {
+  padding: 20px;
+}
+
+.couple-zoom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+  .couple-content {
+    padding: 0 10px;
+  }
+  
+  .couple-container {
+    padding: 15px;
+  }
+  
+  .couple-titulo {
+    font-size: 1rem;
+  }
+  
+  .couple-number-node {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+}
+
+.rside {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rside div {
+  padding: 10px;
+  min-height: 50%;
+  border-left: 2px solid #5b356c;
+  text-align: center;
+}
+
+.compatibility-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.compatibility-chart {
+  margin-bottom: 30px;
+}
+
+.compatibility-chart h4,
+.compatibility-summary h4 {
+  color: #5b356c;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.compatibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.compatibility-table th,
+.compatibility-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.compatibility-table th {
+  background-color: #5b356c;
+  color: white;
+  font-weight: 600;
+}
+
+.compatibility-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.compatibility-excellent {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.compatibility-good {
+  background-color: #8bc34a;
+  color: white;
+  font-weight: bold;
+}
+
+.compatibility-average {
+  background-color: #ffc107;
+  color: #333;
+  font-weight: bold;
+}
+
+.compatibility-challenging {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.compatibility-summary {
+  margin-top: 20px;
+}
+
+.compatibility-summary p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.section-divider {
+  height: 2px;
+  background-color: #eee;
+  margin: 0px 0 20px;
+  width: 100%;
+}
+
+.section-title {
+  color: #5b356c;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.centerVertHoriz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.masc {
+  position: relative;
+  display: inline-block;
+}
+
+.iconin {
+  font-size: 2rem;
+  color: #5b356c;
+}
+
+/* Fix for couple layout specific issues */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-md-6, .col-12, .col-md-4, .col-md-2, .col-md-3, .col-2, .col-3, .col-6, .col-8, .col-1 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+.col-1 {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+.col-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .compatibility-table th, 
+  .compatibility-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 1.5rem;
+    padding: 0 15px;
+  }
+  
+  .containerBox {
+    padding: 20px;
+  }
+  
+  .titulo {
+    font-size: 1.2rem;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .Lleft, .Lright {
+    width: 3.5rem;
+  }
+  
+  .masc {
+    transform: scale(0.8);
+  }
+  
+  .rside div {
+    border-left: none;
+    border-top: 2px solid #5b356c;
+    margin-top: 20px;
+  }
+  
+  .compatibility-table th, 
+  .compatibility-table td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+  
+  .compatibility-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 0 10px;
+  }
+  
+  .containerBox {
+    padding: 15px;
+  }
+  
+  .titulo {
+    font-size: 1rem;
+  }
+  
+  .compatibility-table th, 
+  .compatibility-table td {
+    padding: 4px;
+    font-size: 0.7rem;
+  }
+  
+  .compatibility-container {
+    padding: 10px;
+  }
+}
+
+/* Name styles in results */
+h3.name {
+  color: #5b356c;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Form headers */
+.form-group label {
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-family: 'Morgan';
+  color: #E7E7D6;
+}
+
+/* Button icon styling */
+.send i {
+  font-size: 1.3rem;
+}
+
+/* PDF button styling */
+.btn-primary.btn-lg {
+  background-color: #5b356c;
+  border-color: #5b356c;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary.btn-lg:hover {
+  background-color: #5B356C;
+  border-color: #6e01a0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Clean, modern chart styling to match Angular version */
+.numerology-diagram,
+.compatibility-diagram {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compatibility-diagram {
+  background-color: #f5f0ff;
+}
+
+.number-node,
+.comp-node {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #594363;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #594363;
+}
+
+.number-node.top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.number-node.left {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.number-node.right {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.number-node.bottom-left {
+  bottom: 20%;
+  left: 20%;
+}
+
+.number-node.bottom-right {
+  bottom: 20%;
+  right: 20%;
+}
+
+.comp-node {
+  background-color: #594363;
+  color: white;
+}
+
+.comp-node.top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.comp-node.left {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.comp-node.right {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.comp-node.bottom-left {
+  bottom: 20%;
+  left: 20%;
+}
+
+.comp-node.bottom-right {
+  bottom: 20%;
+  right: 20%;
+}
+
+
+
+/* People container styling to match Angular */
+.people-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 30px 0;
+}
+
+.person-column {
+  text-align: center;
+}
+
+.person-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.person-number {
+  width: 36px;
+  height: 36px;
+  background-color: #594363;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.person-icon {
+  display: none;
+}
+
+.person-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
+}
+
+.person-birthdate {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Compatibility section styling */
+.couple-compatibility-section {
+  width: 100%;
+  margin: 40px 0;
+
+}
+
+.couple-section-title, 
+.couple-forecast-header {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.couple-compatibility-charts {
+  width: 100%;
+}
+
+.couple-chart-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.couple-compatibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.couple-compatibility-table th,
+.couple-compatibility-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.couple-compatibility-table th {
+  background-color: #5b356c;
+  color: white;
+  font-weight: 600;
+}
+
+.couple-compatibility-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.couple-compatibility-excellent {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.couple-compatibility-good {
+  background-color: #8bc34a;
+  color: white;
+  font-weight: bold;
+}
+
+.couple-compatibility-average {
+  background-color: #ffc107;
+  color: #333;
+  font-weight: bold;
+}
+
+.couple-compatibility-challenging {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.couple-compatibility-summary {
+  margin-top: 20px;
+}
+
+.couple-compatibility-summary h4 {
+  color: #5b356c;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.couple-compatibility-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.couple-compatibility-table-container.couple-mobile {
+  margin: 0 auto;
+  max-width: 280px;
+}
+
+/* Year charts section */
+.couple-year-charts-section {
+  margin: 40px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.couple-year-charts-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.couple-year-charts-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.couple-person-year-charts {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0 15px 30px;
+  padding: 15px;
+  /* border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+}
+
+.couple-year-chart-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Monthly forecast section */
+.couple-monthly-forecast-section {
+  width: 100%;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  position: relative;
+}
+
+.couple-forecast-content {
+  width: 100%;
+}
+
+.couple-forecast-desktop {
+  padding: 15px;
+}
+
+/* Mobile view for forecasts */
+.couple-mobile-year-month-selector {
+  margin-bottom: 20px;
+}
+
+.couple-year-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.couple-year-btn {
+  padding: 8px 15px;
+  border: 1px solid #594363;
+  background-color: #fff;
+  color: #594363;
+  font-weight: 500;
+  min-width: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.couple-year-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.couple-year-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.couple-year-btn.couple-active {
+  background-color: #594363;
+  color: #fff;
+}
+
+.couple-month-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+}
+
+.couple-forecast-card-mobile {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.couple-mobile-month-details {
+  padding: 15px;
+}
+
+.couple-mobile-month-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #594363;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.couple-mobile-day-forecast {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.couple-mobile-day-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.couple-day-forecast-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.couple-day-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.couple-day-table th,
+.couple-day-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.couple-day-table th {
+  background-color: #594363;
+  color: white;
+  font-weight: 500;
+}
+
+.couple-day-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.couple-see-more-days {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.couple-see-more-btn {
+  padding: 8px 15px;
+  border: none;
+  background-color: #594363;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.couple-see-more-btn:hover {
+  background-color: #6e01a0;
+}
+
+/* Mobile swiper slide styling */
+.couple-slide-chart {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.couple-swiper-container-mobile {
+  padding: 20px 40px;
+  margin-bottom: 30px;
+}
+
+/* Month forecast styling */
+.couple-month-forecast {
+  margin: 15px auto;
+  max-width: 450px;
+}
+
+.couple-month-detail {
+  padding: 10px;
+}
+
+.couple-forecast-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.couple-forecast-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.couple-forecast-column.couple-center {
+  margin: 0 15px;
+}
+
+.couple-month-person, 
+.couple-month-combined {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.couple-month-value {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 2px solid #594363;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #594363;
+}
+
+.couple-month-value.couple-combined {
+  width: 60px;
+  height: 60px;
+  background-color: #594363;
+  color: #fff;
+}
+
+/* Footer styling */
+.couple-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.couple-footer .couple-website, 
+.couple-footer .couple-author {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 3px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .couple-chart-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .couple-chart-column {
+    margin-bottom: 25px;
+  }
+  
+  .couple-year-charts-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .couple-person-year-charts {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .couple-compatibility-table th, 
+  .couple-compatibility-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+} 
